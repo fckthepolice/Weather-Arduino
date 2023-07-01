@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: rgb(19, 34, 99);
+}
+
+.container-btn{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    height: 40px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    outline: none;
+    padding: 7px;
+    width: 120px;
+    margin: 10px 20px 0 20px;
+    border: none;
+}
+
+button:nth-child(1){
+    background: rgba(17, 216, 17, 1);
+    color: white;
+    transition: background 0.4s ease;
+}
+
+button:nth-child(1):hover{
+    background: rgb(25, 122, 25);
+}
+
+button:nth-child(2){
+    background: rgba(241, 38, 23, 1);
+    color: white;
+    transition: background 0.4s ease;
+}
+
+button:nth-child(2):hover{
+    background: rgb(177, 16, 16);
+}
+
+h1{
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    display: block;
+}
+
+.estado-placa{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+img{
+    width: 150px;
+    filter: grayscale(1);
+    transition: filter 0.4s ease;
+}
+
+img.remove-filter{
+    filter: grayscale(0);
+}
+
+p{
+    text-align: center;
+    color: white;
+}

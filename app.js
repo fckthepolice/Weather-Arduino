@@ -4,11 +4,11 @@ import { SerialPort } from 'serialport';
 const app = express();
 const port = 3000;
 
-const arduino = new SerialPort({ path: 'COM4', baudRate: 9600 }, err =>{
+const arduino = new SerialPort({ path: 'COM3', baudRate: 9600 }, err =>{
     if(err){
-        console.log('Error al abir el puerto serial: ',err);
+        console.log('Error al abir el puerto serial: ', err);
     }else{
-        console.log('Conectado al Arduino en el puerto COM4');
+        console.log('Conectado al Arduino en el puerto COM3');
     }
 });
 

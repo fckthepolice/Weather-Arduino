@@ -2,11 +2,11 @@ import http from 'node:http'
 import express from 'express';
 import { SerialPort } from 'serialport';
 import { ReadlineParser } from '@serialport/parser-readline'
-import { Socket } from 'socket.io';
+import { Server as SocketServer } from 'socket.io';
 
 const app = express()
 const server = http.createServer(app)
-const io = Socket.listen(server)
+const io = new SocketServer(server)
 
 server.listen(3000, () =>{
     console.log('Servidor escuchando en puerto:', 3000)
@@ -31,4 +31,4 @@ arduinoPort.on('error', err =>{
     console.log(err)
 })
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('public'));

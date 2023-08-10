@@ -29,15 +29,11 @@ void loop() {
   float temperatureCelsius = dht.readTemperature();
   float humidity = dht.readHumidity();
 
-  String strPressure = String(pressure);
-  String strCelsius = String(temperatureCelsius);
-  String strHumidity = String(humidity);
-
-  Serial.println(strPressure);
+  Serial.println(pressure);
   Serial.println(",");
-  Serial.println(strCelsius);
+  Serial.println(temperatureCelsiuselsius);
   Serial.println(",");
-  Serial.println(strHumidity);
+  Serial.println(humidity);
 
   delay(2000);
 }

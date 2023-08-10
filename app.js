@@ -7,14 +7,15 @@ import { Server as SocketServer } from 'socket.io';
 const app = express()
 const server = http.createServer(app)
 const io = new SocketServer(server)
+const port = 3000
 
-server.listen(3000, () =>{
-    console.log('Servidor escuchando en puerto:', 3000)
+server.listen(port, () =>{
+    console.log(`Servidor inicializado en http://localhost:${port}`)
 })
 
 
 //COMUNICACION SERIAL
-const arduinoPort = new SerialPort({ path: 'COM3', baudRate: 9600 }) 
+const arduinoPort = new SerialPort({ path: 'COM4', baudRate: 9600 }) 
 
 const parser = arduinoPort.pipe(new ReadlineParser({ delimiter: '\r\n' }))
 

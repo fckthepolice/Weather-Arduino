@@ -1,62 +1,34 @@
+import http from 'node:http'
 import express from 'express';
 import { SerialPort } from 'serialport';
+import { ReadlineParser } from '@serialport/parser-readline'
+import { Socket } from 'socket.io';
 
-const app = express();
-const port = 3000;
+const app = express()
+const server = http.createServer(app)
+const io = Socket.listen(server)
 
+server.listen(3000, () =>{
+    console.log('Servidor escuchando en puerto:', 3000)
+})
+
+
+//COMUNICACION SERIAL
 const arduinoPort = new SerialPort({ path: 'COM3', baudRate: 9600 }) 
 
-arduinoPort.on('open', () =>{
+const parser = arduinoPort.pipe(new ReadlineParser({ delimiter: '\r\n' }))
+
+parser.on('open', () =>{
     console.log('Conexión con arduino establecida')
 })
 
-arduinoPort.on('data', (data) =>{
-    const dataString = data.toString().trim(',')
-
-    //Procesar los datos enviados por arduino
-    const [presion, temperatura, humedad] = dataString.split(',');
-    console.log('Presión atmosférica:', presion, 'Pa');
-    console.log('Temperatura:', temperatura, '°C');
-    console.log('Humedad:', humedad, '%');
+parser.on('data', data =>{
+    console.log(data)
+    io.emit(data)
 })
 
-app.use(express.static('public'));
+arduinoPort.on('error', err =>{
+    console.log(err)
+})
 
-app.listen(port, () =>{
-    console.log(`Servidor inicializado en http://localhost:${port}`);
-});
-
-// app.get('/verificarPlaca', (req, res) =>{
-//     const arduinoConectado = arduino.isOpen;
-//     res.json({arduinoConectado});
-// })
-
-// app.post('/encender' ,(req, res) =>{
-//     arduino.write('1')
-//     res.send('Encendido')
-// })
-
-// app.post('/apagar' ,(req, res) =>{
-//     arduino.write('0')
-//     res.send('Apagado')
-// })
-
-
-// Otra prueba
-// app.get('/data', (req, res) => {
-//     let receivedData = '';
-
-//     arduinoPort.on('data', (data) => {
-//         receivedData = data.toString().trim();
-//     });
-
-//     setTimeout(() => {
-//         const [presion, temperatura, humedad] = receivedData.split(',');
-//         const data = {
-//             presion,
-//             temperatura,
-//             humedad
-//         };
-//         res.json(data);
-//     }, 1000); // Esperar un segundo para asegurarse de que los datos se hayan recibido completamente
-// });
+app.use(express.static(__dirname + '/public'));

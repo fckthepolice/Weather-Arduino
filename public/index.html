@@ -3,26 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control de led | Arduino</title>
+    <title>Estación meteorológica | Arduino</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="container__not-flex">
-            <h1>Control de LED</h1>
-            <div class="container-btn">
-                <button id="encender">Encender</button>
-                <button id="apagar">Apagar</button>
-            </div>
-            <div class="estado-placa">
-                <div class="container__not-flex">
-                    <img src="images/foco.png" id="imagen-placa">
-                    <p id="texto-placa"></p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- <h1>Arduino Data</h1>
+    <p>Presión atmosférica: <span id="presion"></span> Pa</p>
+    <p>Temperatura: <span id="temperatura"></span> °C</p>
+    <p>Humedad: <span id="humedad"></span> %</p> -->
 
+    <div class="app-wrap">
+        <header>
+            <input type="text" autocomplete="off" class="search-box" placeholder="Buscar localidad" />
+        </header>
+        <main>
+            <section class="location">
+                <div class="city">Buenos Aires, ARG</div>
+                <div class="date">Lunes 13 de Agosto, 2023</div>
+            </section>
+            <div class="current">
+                <div class="temp">15<span>°c</span></div>
+                <div class="weather">Soleado</div>
+                <div class="hi-low">13°c / 16°c</div>
+                <div class="hi-low">Viento a 8 km/h</div>
+                <div class="hi-low">Humedad: 76%</div>
+            </div>
+        </main>
+    </div>
 
     <script src="main.js" type="module"></script>
 </body>

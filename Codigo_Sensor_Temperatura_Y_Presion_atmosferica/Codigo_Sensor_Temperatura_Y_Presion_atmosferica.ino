@@ -32,7 +32,7 @@ void loop() {
 
   Serial.print(result);
 
-  delay(2000);
+  delay(1000);
 }
 
 

@@ -25,29 +25,29 @@ parser.on('open', () =>{
 const dataObject = {
     pressure: 0,
     temperature: 0,
-    humidity: 0
+    humidity: 0,
+    date: ''
 }
 
 parser.on('data', data =>{
     const lines = data.split(',');
 
-    // console.log(lines)
     const presion = lines[0]
     const temperatura = lines[1]
     const humedad = lines[2]
+    
+    const opciones = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    const currentDate = new Date();
+    const fechaFormateada = currentDate.toLocaleDateString('es-ES', opciones);
+
 
     dataObject.pressure = presion
     dataObject.temperature = temperatura
     dataObject.humidity = humedad
+    dataObject.date = fechaFormateada;
 
-    io.emit(data)
+    io.emit('data', dataObject);
 })
-
-setInterval( () =>{
-    console.log('Presión atmosférica: ', dataObject.pressure)
-    console.log('Temperatura: ', dataObject.temperature, 'C')
-    console.log('Humedad: ', dataObject.humidity, '%')
-}, 2000)
 
 arduinoPort.on('error', err =>{
     console.log(err)

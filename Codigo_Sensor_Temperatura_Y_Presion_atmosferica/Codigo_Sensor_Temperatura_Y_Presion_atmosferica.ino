@@ -3,6 +3,7 @@
 #include <Adafruit_BMP280.h>
 #include <DHT.h>
 #include <stdio.h>
+#include <ArduinoJson.h>
 
 #define DHT_TYPE DHT11
 #define DHT_PIN 2
@@ -15,8 +16,7 @@ void setup() {
   Serial.begin(9600);
   dht.begin();
   while (!Serial)
-    delay(100); // Esperar hasta que se establezca la conexión serial
-  Serial.println(F("BMP280 test"));
+    delay(100);
 
   if (!bmp.begin(BMP280_ADDRESS)) {
     Serial.println(F("Could not find a valid BMP280 sensor, check wiring or try a different address!"));
@@ -28,12 +28,9 @@ void loop() {
   float pressure = bmp.readPressure() / 100.0; // Convertir Pa a hPa
   float temperatureCelsius = dht.readTemperature();
   float humidity = dht.readHumidity();
+  String result = String(pressure) + "," + String(temperatureCelsius) + "," + String(humidity) + "/";
 
-  Serial.println(pressure);
-  Serial.println(",");
-  Serial.println(temperatureCelsiuselsius);
-  Serial.println(",");
-  Serial.println(humidity);
+  Serial.print(result);
 
   delay(2000);
 }

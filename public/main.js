@@ -1,6 +1,7 @@
 const API_KEY = '11c16b180032404eb6f65915231308'
-const lat = -34.714428337488094
-const lon = -58.386978067891
+const lat = -34.71390790258611
+const lon = -58.38588611640439
+
 const socket = io();
 
 const fetchData = () =>{

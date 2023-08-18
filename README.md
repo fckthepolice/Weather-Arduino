@@ -1,2 +1,1 @@
-## Weather-Arduino
-weather station with arduino
+## Weather station with arduino

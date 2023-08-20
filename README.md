@@ -19,3 +19,10 @@ En este proyecto se realiza una estación meteorológica con Arduino, la cual es
 Los datos se estan enviando a través de <a href="https://www.npmjs.com/package/socket.io">sockets</a> y <a href="https://www.npmjs.com/package/serialport">Puertos seriales</a>, los datos son recibidos en el servidor y se almacenan en un objeto de JS, el cuál se va actualizando cada 1s.
 
 ## ¿Que depencias se estan utilizando?
+
+<ul>
+  <li>Express</li>
+  <li>Serialport</li>
+  <li>Socket.io</li>
+  <li>Bootstrap</li>
+</ul>

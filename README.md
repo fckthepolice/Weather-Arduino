@@ -8,7 +8,7 @@ En este proyecto se realiza una estación meteorológica con Arduino, la cual es
   <li>Velocidad del viento</li>
 </ul>
 
-## De que manera es capaz de obtener estos datos?
+##  ¿De que manera es capaz de obtener estos datos?
 
 <ul>
   <li>Temperatura y humedad: <a href="https://www.hwlibre.com/dht11/">DHT11</a> </li>

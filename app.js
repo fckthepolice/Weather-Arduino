@@ -1,4 +1,4 @@
-//asd
+//Comentario prueba
 import http from 'node:http'
 import express from 'express';
 import { SerialPort } from 'serialport';

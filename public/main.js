@@ -1,17 +1,16 @@
-const API_KEY = '11c16b180032404eb6f65915231308'
+const API_KEY = 'fa1550bb629b138ba6e49e79c35e768b'
 const lat = -34.71390790258611
 const lon = -58.38588611640439
 
 const socket = io();
 
 const fetchData = () =>{
-    fetch(`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${lat},${lon}&aqi=yes&lang=es`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&cnt=10`)
         .then(response => response.json())
         .then(data => {
-            const {current:{condition:{text: info_clima }}} = data
-            const {location:{country: pais, name: ciudad, region: provincia}} = data
-            document.getElementById('clima').textContent = `${info_clima}`
-            document.getElementById('localidad').textContent = `${pais}, ${provincia}, ${ciudad}`
+            console.log(data)
+            const {city:{name: localidad}} = data
+            document.getElementById('localidad').textContent = `${localidad}`
         })
 }
 fetchData()

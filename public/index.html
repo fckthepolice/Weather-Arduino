@@ -6,12 +6,135 @@
     <title>Estación meteorológica | Arduino</title>
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
     <section class="full-container">
         <article class="sub__container">
             <div class="right-side">
-                
+                <div class="top__right-side">
+                    <div class="round">
+                        <i class="bi bi-geo-alt"></i>
+                        <p class="location"></p>
+                    </div>
+                </div>
+                <div class="current-temperature">
+                    <p class="c-temperature"></p>
+                </div>
+                <hr>
+                <div class="future-days">
+                    <p class="title">Días siguientes</p>
+                    <div class="container-general">
+                        <div class="future-days__container">
+                            <div class="future-days__rounded">
+                                <i class="bi bi-thermometer"></i>
+                            </div>
+                            <div class="future-days-container">
+                                <p class="future-days-title f-d-t-01"></p>
+                                <p class="future-days-info  f-d-i-01"></p>
+                            </div>
+                        </div>
+                        <div class="future-days__container">
+                            <div class="future-days__rounded">
+                                <i class="bi bi-thermometer"></i>
+                            </div>
+                            <div class="future-days-container">
+                                <p class="future-days-title f-d-t-02"></p>
+                                <p class="future-days-info  f-d-i-02"></p>
+                            </div>
+                        </div>
+                        <div class="future-days__container">
+                            <div class="future-days__rounded">
+                                <i class="bi bi-thermometer"></i>
+                            </div>
+                            <div class="future-days-container">
+                                <p class="future-days-title f-d-t-03"></p>
+                                <p class="future-days-info  f-d-i-03"></p>
+                            </div>
+                        </div>
+                        <div class="future-days__container">
+                            <div class="future-days__rounded">
+                                <i class="bi bi-thermometer"></i>
+                            </div>
+                            <div class="future-days-container">
+                                <p class="future-days-title f-d-t-04"></p>
+                                <p class="future-days-info  f-d-i-04"></p>
+                            </div>
+                        </div>
+                        <div class="future-days__container">
+                            <div class="future-days__rounded">
+                                <i class="bi bi-thermometer"></i>
+                            </div>
+                            <div class="future-days-container">
+                                <p class="future-days-title f-d-t-05"></p>
+                                <p class="future-days-info  f-d-i-05"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- INFORMACION DE CLIMA -->
+            <div class="info-day">
+                <p class="info-day__day"></p>
+            </div>
+            <!-- BOTTOM SURFACE -->
+            <div class="future-temperature-day">
+                <div class="future-temperature-day__container">
+                    <p class="f-day f-time-day f-time-01"></p>
+                    <div class="future-temperature-day__rounded">
+                        <i class="bi bi-thermometer"></i>
+                    </div>
+                    <p class="f-day f-temperature-day f-temp-01"></p>
+                    <p class="f-day f-d-day f-day-01"></p>
+                </div>
+                <div class="future-temperature-day__container">
+                    <p class="f-day f-time-day f-time-02"></p>
+                    <div class="future-temperature-day__rounded">
+                        <i class="bi bi-thermometer"></i>
+                    </div>
+                    <p class="f-day f-temperature-day f-temp-02"></p>
+                    <p class="f-day f-d-day f-day-02"></p>
+                </div>
+                <div class="future-temperature-day__container">
+                    <p class="f-day f-time-day f-time-03"></p>
+                    <div class="future-temperature-day__rounded">
+                        <i class="bi bi-thermometer"></i>
+                    </div>
+                    <p class="f-day f-temperature-day f-temp-03"></p>
+                    <p class="f-day f-d-day f-day-03"></p>
+                </div>
+                <div class="future-temperature-day__container">
+                    <p class="f-day f-time-day f-time-04"></p>
+                    <div class="future-temperature-day__rounded">
+                        <i class="bi bi-thermometer"></i>
+                    </div>
+                    <p class="f-day f-temperature-day f-temp-04"></p>
+                    <p class="f-day f-d-day f-day-04"></p>
+                </div>
+                <div class="future-temperature-day__container">
+                    <p class="f-day f-time-day f-time-05"></p>
+                    <div class="future-temperature-day__rounded">
+                        <i class="bi bi-thermometer"></i>
+                    </div>
+                    <p class="f-day f-temperature-day f-temp-05"></p>
+                    <p class="f-day f-d-day f-day-05"></p>
+                </div>
+                <div class="future-temperature-day__container">
+                    <p class="f-day f-time-day f-time-06"></p>
+                    <div class="future-temperature-day__rounded">
+                        <i class="bi bi-thermometer"></i>
+                    </div>
+                    <p class="f-day f-temperature-day f-temp-06"></p>
+                    <p class="f-day f-d-day f-day-06"></p>
+                </div>
+                <div class="future-temperature-day__container">
+                    <p class="f-day f-time-day f-time-07"></p>
+                    <div class="future-temperature-day__rounded">
+                        <i class="bi bi-thermometer"></i>
+                    </div>
+                    <p class="f-day f-temperature-day f-temp-07"></p>
+                    <p class="f-day f-d-day f-day-07"></p>
+                </div>
             </div>
         </article>
     </section>

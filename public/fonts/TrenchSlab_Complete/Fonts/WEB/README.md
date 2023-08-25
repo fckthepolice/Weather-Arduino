@@ -1,0 +1,31 @@
+# Installing Webfonts
+Follow these simple Steps.
+
+## 1.
+Put `trench-slab/` Folder into a Folder called `fonts/`.
+
+## 2.
+Put `trench-slab.css` into your `css/` Folder.
+
+## 3. (Optional)
+You may adapt the `url('path')` in `trench-slab.css` depends on your Website Filesystem.
+
+## 4.
+Import `trench-slab.css` at the top of you main Stylesheet.
+
+```
+@import url('trench-slab.css');
+```
+
+## 5.
+
+
+```
+font-family: 'TrenchSlab-Variable';
+font-family: 'TrenchSlab-Light';
+font-family: 'TrenchSlab-Regular';
+font-family: 'TrenchSlab-Medium';
+font-family: 'TrenchSlab-Semibold';
+font-family: 'TrenchSlab-Bold';
+```
+

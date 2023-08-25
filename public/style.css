@@ -1,5 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@font-face {
+    font-family: 'Trench';
+    src: url(fonts/TrenchSlab_Complete/Fonts/OTF/TrenchSlab-Light.otf);
+}
+@font-face {
+    font-family: 'Array';
+    src: url(fonts/Array_Complete/Fonts/OTF/Array-Regular.otf);
+}
 *{
     margin: 0;
     padding: 0;
@@ -7,7 +13,7 @@
 }
   
 body{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Trench', sans-serif;
     background-image: url('./images/bg.jpg');
     background-size: cover;
     background-position: top center;
@@ -22,7 +28,7 @@ body{
 }
 .sub__container{
     display: flex;
-    justify-content: flex-start;
+    position: relative;
     width: 70vw;
     height: 90vh;
     border-radius: 10px;
@@ -33,10 +39,147 @@ body{
 }
 .right-side{
     width: 225px;
-    justify-self: end;
     height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(5px);
+    background: rgba( 100, 100, 100, 0.25 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+}
+.top__right-side{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.round{
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+    padding: 6px;
+}
+.bi, p{
+    color: #f0f0f0;
+    display: inline-block;
+}
+.bi-geo-alt{
+    margin-right: 5px;
+}
+.current-temperature{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    font-family: 'Array';
+}
+.future-temperature-day{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    height: 200px;
+    width: calc(100% - 225px);
+    left: 0;
+    bottom: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+.future-temperature-day__container{
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+    background: rgba( 100, 100, 100, 0.05 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+}
+.future-temperature-day__rounded{
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+    background: rgba( 100, 100, 100, 0.25 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+}
+.f-day{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.f-time-day{
+    margin-bottom: 0.8rem;
+}
+.f-temperature-day{
+    margin-top: 0.8rem;
+}
+.f-d-day{
+    font-size: 10px;
+}
+.info-day{
+    position: absolute;
+    left: 0;
+    bottom: calc(200px);
+    width: calc(100% - 225px);
+    height: 100px;
+}
+.info-day__day{
+    position: absolute;
+    right: 25px;
+    bottom: 10px;
+    font-family: 'Array';
+    font-size: 65px;
+}
+hr{
+    margin-top: 150px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.future-days{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 150px - 150px);
+}
+.title{
+    margin-bottom: 10px;
+}
+.future-days__container{
+    display: flex;
+    height: auto;
+    margin-top: 1rem;
+}
+.future-days__rounded{
+    padding: 0.5rem;
+    display: flex;
+    justify-self: flex-start;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+    background: rgba( 100, 100, 100, 0.25 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    margin-right: 10px;
+}
+.future-days-container{
+    display: flex;
+    flex-direction: column;
+}
+.future-days-title{
+    font-size: 15px;
+    align-self: flex-start;
+}
+.future-days-info{
+    font-size: 10px;
+    align-self: flex-start;
 }
